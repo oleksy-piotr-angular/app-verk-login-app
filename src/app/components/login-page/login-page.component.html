@@ -1,1 +1,35 @@
-<p>login-page works!</p>
+<h2>Login:</h2>
+<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+  <fieldset ngModelGroup="login">
+    <input
+      #emailRef="ngModel"
+      name="email"
+      ngModel
+      type="text"
+      [(ngModel)]="email"
+      required
+    />
+    <div
+      class="text-danger"
+      *ngIf="emailRef.errors?.['required']&&emailRef.touched"
+    >
+      This field is required
+    </div>
+
+    <input
+      #passwordRef="ngModel"
+      name="password"
+      type="password"
+      [(ngModel)]="password"
+      required
+    />
+
+    <div
+      class="text-danger"
+      *ngIf="passwordRef.errors?.['required']&&passwordRef.touched"
+    >
+      This field is required
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
