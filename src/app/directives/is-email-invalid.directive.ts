@@ -19,7 +19,6 @@ import {
 export class IsEmailInvalidDirective implements Validator {
   validate(control: AbstractControl): ValidationErrors | null {
     const EMAIL_REGEXP = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    console.log('isEmail: ' + EMAIL_REGEXP.test(control.value));
     return EMAIL_REGEXP.test(control.value) ? null : { isEmailInvalid: true };
   }
 }
