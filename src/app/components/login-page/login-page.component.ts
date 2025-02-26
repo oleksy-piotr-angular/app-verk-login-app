@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +11,16 @@ export class LoginPageComponent {
   email: string = '';
   password: string = '';
 
+  constructor(private auth: AuthService, private router: Router) {}
+
+  ngOnInit(): void {
+    //redirect to the home page if user is still Authenticated
+    if (this.auth.isAuthenticated()) {
+      this.router.navigate(['/home']);
+    }
+  }
+
   onSubmit(formValue: { login: { email: string; password: string } }) {
-    console.log(formValue);
+    this.auth.login(formValue.login.email, formValue.login.password);
   }
 }
