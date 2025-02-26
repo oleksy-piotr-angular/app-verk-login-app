@@ -6,30 +6,48 @@
       name="email"
       ngModel
       type="text"
+      placeholder="email"
       [(ngModel)]="email"
       required
+      appIsEmailInvalid
     />
     <div
       class="text-danger"
-      *ngIf="emailRef.errors?.['required']&&emailRef.touched"
+      style="height: 15px; font-size: xx-small; margin-bottom: 10px"
     >
-      This field is required
+      <span *ngIf="emailRef.errors?.['required'] && emailRef.touched"
+        >This field is required.</span
+      >
+      <span
+        *ngIf="emailRef.errors?.['isEmailInvalid'] && emailRef.touched && emailRef.value"
+      >
+        email is invalid
+      </span>
     </div>
 
     <input
       #passwordRef="ngModel"
       name="password"
       type="password"
+      placeholder="password"
       [(ngModel)]="password"
       required
     />
 
     <div
       class="text-danger"
-      *ngIf="passwordRef.errors?.['required']&&passwordRef.touched"
+      style="height: 15px; font-size: xx-small; margin-bottom: 10px"
     >
-      This field is required
+      <span *ngIf="passwordRef.errors?.['required']&&passwordRef.touched"
+        >This field is required</span
+      >
     </div>
   </fieldset>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button
+    [disabled]="passwordRef.invalid || emailRef.invalid"
+    type="submit"
+    class="btn btn-primary"
+  >
+    Submit
+  </button>
 </form>
