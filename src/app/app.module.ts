@@ -7,6 +7,7 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
 import { IsEmailInvalidDirective } from './directives/is-email-invalid.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { IsEmailInvalidDirective } from './directives/is-email-invalid.directive
     HomePageComponent,
     IsEmailInvalidDirective,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
