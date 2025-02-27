@@ -1,5 +1,7 @@
 <h1>AppVerkLoginApp</h1>
 
+<p>Po sklonowaniu repozytorium wystarcz w terminalu zainstalować moduły "npm install" i odpalić aplikację lokalnie "ng serve"</p>
+
 <h2>Lista spełnionych wymagań:</h1>
 <ul>
   <li>
