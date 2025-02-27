@@ -13,18 +13,19 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  //emit user email ro userEmailStore subscribers, set userToken in localStorage and navigate to home page
+  //set userToken and user email in localStorage and navigate to home page
   login(email: string, password: string) {
     //normally here should be a request sent to the server to get the JWT and perform other actions
-    this.userEmailStore.next(email);
     localStorage.setItem('userToken', this.userToken);
+    localStorage.setItem('userEmail', email);
     this.router.navigate(['/home']);
   }
 
-  //emit empty string to userEmailStore subscribers, remove userToken and navigate to login page
+  //remove userToken and userEmail from localStorage and navigate to login page
   logout() {
     this.userEmailStore.next('');
     localStorage.removeItem('userToken');
+    localStorage.removeItem('userEmail');
     this.router.navigate(['/login']);
   }
 
@@ -33,8 +34,10 @@ export class AuthService {
     return localStorage.getItem('userToken') ? true : false;
   }
 
-  //to get user email address from Observable
+  //get user email address from localStorage and emit it through userEmailStore
   getUserEmail(): Observable<string> {
+    const userEmail = localStorage.getItem('userEmail');
+    this.userEmailStore.next(userEmail ? userEmail : '');
     return this.userEmailStore.asObservable();
   }
 }
