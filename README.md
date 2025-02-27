@@ -27,7 +27,7 @@
     <ul>
       <li>użytkownik zalogowany nie miał dostępu do strony logowania</li>
       <li>użytkownik niezalogowany nie miał dostępu do strony głównej</li>
-    <ul>
+    </ul>
   </li>
   <li>
     Po udanym logowaniu i przejściu do strony głównej pobiera się z API i wyświetla
