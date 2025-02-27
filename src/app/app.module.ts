@@ -8,6 +8,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
 import { IsEmailInvalidDirective } from './directives/is-email-invalid.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorMessageControlComponent } from './components/error-message-control/error-message-control.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginPageComponent,
     HomePageComponent,
     IsEmailInvalidDirective,
+    ErrorMessageControlComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
