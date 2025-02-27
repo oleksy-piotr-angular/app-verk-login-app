@@ -11,20 +11,12 @@
       required
       appIsEmailInvalid
     />
-    <div
-      class="text-danger"
-      style="height: 15px; font-size: xx-small; margin-bottom: 10px"
-    >
-      <span *ngIf="emailRef.errors?.['required'] && emailRef.touched"
-        >This field is required.</span
-      >
-      <span
-        *ngIf="emailRef.errors?.['isEmailInvalid'] && emailRef.touched && emailRef.value"
-      >
-        email is invalid
-      </span>
+    <div style="height: 15px; margin-bottom: 10px">
+      <app-error-message-control
+        *ngIf="emailRef.touched && emailRef.invalid"
+        [control]="emailRef.errors"
+      ></app-error-message-control>
     </div>
-
     <input
       #passwordRef="ngModel"
       name="password"
@@ -33,14 +25,11 @@
       [(ngModel)]="password"
       required
     />
-
-    <div
-      class="text-danger"
-      style="height: 15px; font-size: xx-small; margin-bottom: 10px"
-    >
-      <span *ngIf="passwordRef.errors?.['required']&&passwordRef.touched"
-        >This field is required</span
-      >
+    <div style="height: 15px; margin-bottom: 10px">
+      <app-error-message-control
+        *ngIf="passwordRef.touched && passwordRef.invalid"
+        [control]="passwordRef.errors"
+      ></app-error-message-control>
     </div>
   </fieldset>
   <button
