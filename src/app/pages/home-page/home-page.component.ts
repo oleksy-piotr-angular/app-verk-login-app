@@ -7,7 +7,7 @@ import { UserData } from '../../data-structure-definitions/user-data';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.css',
+  styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit, OnDestroy {
   userData: UserData | null = null;
