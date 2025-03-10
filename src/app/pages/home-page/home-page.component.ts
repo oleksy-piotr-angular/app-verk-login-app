@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { HttpService } from '../../services/http.service';
-import { AuthService } from './../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserData } from '../../data-structure-definitions/user-data';
 
