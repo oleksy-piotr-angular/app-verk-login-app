@@ -11,7 +11,7 @@
       required
       appIsEmailInvalid
     />
-    <div style="height: 15px; margin-bottom: 10px">
+    <div class="error-message-controller">
       <app-error-message-control
         *ngIf="emailRef.touched && emailRef.invalid"
         [control]="emailRef.errors"
@@ -25,7 +25,7 @@
       [(ngModel)]="password"
       required
     />
-    <div style="height: 15px; margin-bottom: 10px">
+    <div class="error-message-controller">
       <app-error-message-control
         *ngIf="passwordRef.touched && passwordRef.invalid"
         [control]="passwordRef.errors"
