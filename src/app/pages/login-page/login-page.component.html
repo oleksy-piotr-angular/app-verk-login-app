@@ -1,4 +1,5 @@
 <h2>Login:</h2>
+
 <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
   <fieldset ngModelGroup="login">
     <input
@@ -11,12 +12,14 @@
       required
       appIsEmailInvalid
     />
+
     <div class="error-message-controller">
       <app-error-message-control
         *ngIf="emailRef.touched && emailRef.invalid"
         [control]="emailRef.errors"
       ></app-error-message-control>
     </div>
+
     <input
       #passwordRef="ngModel"
       name="password"
@@ -25,6 +28,7 @@
       [(ngModel)]="password"
       required
     />
+
     <div class="error-message-controller">
       <app-error-message-control
         *ngIf="passwordRef.touched && passwordRef.invalid"
@@ -32,11 +36,12 @@
       ></app-error-message-control>
     </div>
   </fieldset>
+
   <button
     [disabled]="passwordRef.invalid || emailRef.invalid"
     type="submit"
     class="btn btn-primary"
   >
-    Submit
+    Log in
   </button>
 </form>

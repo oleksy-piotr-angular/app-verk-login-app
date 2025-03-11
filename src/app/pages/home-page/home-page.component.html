@@ -4,13 +4,17 @@
   <dt class="col-sm-3">id:</dt>
   <dd class="col-sm-9">{{ userData?.id }}</dd>
   <hr />
+
   <dt class="col-sm-3">user email:</dt>
   <dd class="col-sm-9">{{ userEmail }}</dd>
+
   <dt class="col-sm-3">name:</dt>
   <dd class="col-sm-9">{{ userData?.name }}</dd>
+
   <dt class="col-sm-3">username:</dt>
   <dd class="col-sm-9">{{ userData?.username }}</dd>
   <hr />
+
   <dt class="col-sm-3">address:</dt>
   <dd class="col-sm-4">
     <dl class="row">
@@ -19,26 +23,30 @@
         {{ userData?.address?.street }}
       </dd>
     </dl>
+
     <dl class="row">
       <dt class="col-sm-4">suite:</dt>
       <dd class="col-sm-8">
         {{ userData?.address?.suite }}
       </dd>
     </dl>
+
     <dl class="row">
       <dt class="col-sm-4">city:</dt>
       <dd class="col-sm-8">
         {{ userData?.address?.city }}
       </dd>
     </dl>
+
     <dl class="row">
       <dt class="col-sm-4">zipcode:</dt>
       <dd class="col-sm-8">
         {{ userData?.address?.zipcode }}
       </dd>
     </dl>
+    <hr />
+
     <dl class="row">
-      <hr />
       <dt class="col-sm-4">geo:</dt>
       <dd class="col-sm-8">
         <dl>
@@ -46,6 +54,7 @@
           <dd class="col-sm-8">
             {{ userData?.address?.geo?.lat }}
           </dd>
+
           <dt class="col-sm-4">lng:</dt>
           <dd class="col-sm-8">
             {{ userData?.address?.geo?.lng }}
@@ -55,11 +64,14 @@
     </dl>
   </dd>
   <hr />
+
   <dt class="col-sm-3">phone:</dt>
   <dd class="col-sm-9">{{ userData?.phone }}</dd>
+
   <dt class="col-sm-3">website:</dt>
   <dd class="col-sm-9">{{ userData?.website }}</dd>
   <hr />
+
   <dt class="col-sm-3">company:</dt>
   <dd class="col-sm-8">
     <dl>
@@ -67,10 +79,12 @@
       <dd class="col-sm-8">
         {{ userData?.company?.name }}
       </dd>
+
       <dt class="col-sm-4">catchPhrase:</dt>
       <dd class="col-sm-8">
         {{ userData?.company?.catchPhrase }}
       </dd>
+
       <dt class="col-sm-4">bs:</dt>
       <dd class="col-sm-8">
         {{ userData?.company?.bs }}
@@ -80,5 +94,5 @@
 </dl>
 
 <button type="button" class="btn btn-warning mb-4" (click)="onLogout()">
-  Logout
+  Log out
 </button>
