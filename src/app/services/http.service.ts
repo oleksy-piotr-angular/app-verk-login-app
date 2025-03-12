@@ -7,7 +7,7 @@ import { UserData } from '../data-structure-definitions/user-data';
   providedIn: 'root',
 })
 export class HttpService {
-  private URL = '../assets/API.json';
+  private URL: string = '../assets/API.json';
 
   public constructor(private http: HttpClient) {}
 

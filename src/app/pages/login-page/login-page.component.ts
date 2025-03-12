@@ -20,7 +20,9 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  public onSubmit(formValue: { login: { email: string; password: string } }) {
+  public onSubmit(formValue: {
+    login: { email: string; password: string };
+  }): void {
     this.auth.login(formValue.login.email, formValue.login.password);
   }
 }

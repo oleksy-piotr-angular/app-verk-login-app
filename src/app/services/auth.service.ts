@@ -6,15 +6,17 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private userEmailStore = new BehaviorSubject<string>('');
+  private userEmailStore: BehaviorSubject<string> = new BehaviorSubject<string>(
+    ''
+  );
   //random JWT for login simulation
-  private userToken =
+  private userToken: string =
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6ImE2MGIwMTE5ZTFmZGI2NDcyZDM4M2QzNWZhNTc3YzY2In0.e30.b_5xUwUEhOg523v_nT4mtT6R6R5sul2Ek3pGA9jcsyGoLKOExH324hAGI1e8Tig8j1ICZfpx2Z7_Y0UOwrsEEQ';
 
   public constructor(private router: Router) {}
 
   //set userToken and user email in localStorage and navigate to home page
-  public login(email: string, password: string) {
+  public login(email: string, password: string): void {
     //normally here should be a request sent to the server to get the JWT and perform other actions
     localStorage.setItem('userToken', this.userToken);
     localStorage.setItem('userEmail', email);
@@ -22,7 +24,7 @@ export class AuthService {
   }
 
   //remove userToken and userEmail from localStorage and navigate to login page
-  public logout() {
+  public logout(): void {
     this.userEmailStore.next('');
     localStorage.removeItem('userToken');
     localStorage.removeItem('userEmail');

@@ -19,7 +19,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     private httpService: HttpService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     //get user data from API when the component is initialized
     this.getUserDataSub = this.httpService.getUserData().subscribe((data) => {
       this.userData = data;
@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   //for the logout button click event
-  public onLogout() {
+  public onLogout(): void {
     this.authService.logout();
   }
 }
