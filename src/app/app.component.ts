@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router) {}
+  public constructor(private router: Router) {}
   ngOnInit(): void {
     this.router.navigate(['/login']); //redirect to login page after app starts
   }

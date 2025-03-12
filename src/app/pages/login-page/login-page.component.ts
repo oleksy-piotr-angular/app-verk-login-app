@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent implements OnInit {
-  email: string = '';
-  password: string = '';
+  public email: string = '';
+  public password: string = '';
 
-  constructor(private auth: AuthService, private router: Router) {}
+  public constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     //redirect to the home page if user is still Authenticated
@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
     }
   }
 
-  onSubmit(formValue: { login: { email: string; password: string } }) {
+  public onSubmit(formValue: { login: { email: string; password: string } }) {
     this.auth.login(formValue.login.email, formValue.login.password);
   }
 }

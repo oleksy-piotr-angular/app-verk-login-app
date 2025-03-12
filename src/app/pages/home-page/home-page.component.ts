@@ -10,11 +10,11 @@ import { UserData } from '../../data-structure-definitions/user-data';
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-  userData: UserData | null = null;
-  userEmail: string | null = null;
-  getUserDataSub: Subscription | null = null;
-  userEmailSub: Subscription | null = null;
-  constructor(
+  public userData: UserData | null = null;
+  public userEmail: string | null = null;
+  public getUserDataSub: Subscription | null = null;
+  public userEmailSub: Subscription | null = null;
+  public constructor(
     private authService: AuthService,
     private httpService: HttpService
   ) {}
@@ -42,7 +42,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   }
 
   //for the logout button click event
-  onLogout() {
+  public onLogout() {
     this.authService.logout();
   }
 }

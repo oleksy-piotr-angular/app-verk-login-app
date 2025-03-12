@@ -9,10 +9,10 @@ import { UserData } from '../data-structure-definitions/user-data';
 export class HttpService {
   private URL = '../assets/API.json';
 
-  constructor(private http: HttpClient) {}
+  public constructor(private http: HttpClient) {}
 
   //return Observable with Get UserData request with API response simulation
-  getUserData(): Observable<UserData> {
+  public getUserData(): Observable<UserData> {
     return this.http.get<UserData>(this.URL);
   }
 }

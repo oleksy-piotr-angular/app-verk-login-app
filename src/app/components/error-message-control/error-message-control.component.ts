@@ -8,7 +8,7 @@ import { ValidationErrors } from '@angular/forms';
 })
 export class ErrorMessageControlComponent implements OnChanges {
   @Input() control: ValidationErrors | null = null;
-  errorMessages: string[] = [];
+  public errorMessages: string[] = [];
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['control'] && this.control) {
