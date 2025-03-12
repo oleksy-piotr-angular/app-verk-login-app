@@ -7,12 +7,16 @@ import { ValidationErrors } from '@angular/forms';
   styleUrl: './error-message-control.component.scss',
 })
 export class ErrorMessageControlComponent implements OnChanges {
-  @Input() control: ValidationErrors | null = null;
+  @Input('errors') set setErrors(_errors: ValidationErrors | null) {
+    this.errors = _errors;
+  }
+
   public errorMessages: string[] = [];
+  private errors: ValidationErrors | null = null;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['control'] && this.control) {
-      this.errorMessages = this.getErrorMessages(this.control);
+    if (changes['setErrors'] && this.errors) {
+      this.errorMessages = this.getErrorMessages(this.errors);
     }
   }
 

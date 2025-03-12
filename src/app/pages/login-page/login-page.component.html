@@ -16,7 +16,7 @@
     <div class="error-message-controller">
       <app-error-message-control
         *ngIf="emailRef.touched && emailRef.invalid"
-        [control]="emailRef.errors"
+        [errors]="emailRef.errors"
       ></app-error-message-control>
     </div>
 
@@ -32,7 +32,7 @@
     <div class="error-message-controller">
       <app-error-message-control
         *ngIf="passwordRef.touched && passwordRef.invalid"
-        [control]="passwordRef.errors"
+        [errors]="passwordRef.errors"
       ></app-error-message-control>
     </div>
   </fieldset>
