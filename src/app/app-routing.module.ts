@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
-    canActivate: [canOpenIfLoggedInGuard], ///guard has been set to prevent unauthorized opening of the home page
+    canActivate: [canOpenIfLoggedInGuard], //a guard has been set to allow only logged in users to visit this home page
   },
 ];
 
