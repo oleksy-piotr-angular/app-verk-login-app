@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { IsEmailInvalidDirective } from './directives/is-email-invalid.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorMessageControlComponent } from './components/error-message-control/error-message-control.component';
+import { InputControlComponent } from './components/input-control/input-control.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ErrorMessageControlComponent } from './components/error-message-control
     HomePageComponent,
     IsEmailInvalidDirective,
     ErrorMessageControlComponent,
+    InputControlComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
