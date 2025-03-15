@@ -1,4 +1,4 @@
-import { Directive } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 import {
   AbstractControl,
   NG_VALIDATORS,
@@ -7,19 +7,26 @@ import {
 } from '@angular/forms';
 
 @Directive({
-  selector: '[appIsEmailInvalid]',
+  selector: '[appCheckEmail]',
   providers: [
     {
       provide: NG_VALIDATORS,
-      useExisting: IsEmailInvalidDirective,
+      useExisting: CheckEmailDirective,
       multi: true,
     },
   ],
 })
 //custom directive to validate email with Regular Expression
-export class IsEmailInvalidDirective implements Validator {
+export class CheckEmailDirective implements Validator {
+  @Input('appCheckEmail') checkEmail: boolean = false;
   validate(control: AbstractControl): ValidationErrors | null {
     const EMAIL_REGEXP = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return EMAIL_REGEXP.test(control.value) ? null : { isEmailInvalid: true };
+
+    const isEmailInvalid =
+      EMAIL_REGEXP.test(control.value) && this.checkEmail
+        ? null
+        : { isEmailInvalid: true };
+
+    return isEmailInvalid;
   }
 }

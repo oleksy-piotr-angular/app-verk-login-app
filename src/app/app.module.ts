@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FormsModule } from '@angular/forms';
-import { IsEmailInvalidDirective } from './directives/is-email-invalid.directive';
+import { CheckEmailDirective } from './directives/check-email.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorMessageControlComponent } from './components/error-message-control/error-message-control.component';
 import { InputControlComponent } from './components/input-control/input-control.component';
@@ -16,7 +16,7 @@ import { InputControlComponent } from './components/input-control/input-control.
     AppComponent,
     LoginPageComponent,
     HomePageComponent,
-    IsEmailInvalidDirective,
+    CheckEmailDirective,
     ErrorMessageControlComponent,
     InputControlComponent,
   ],
