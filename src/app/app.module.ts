@@ -10,6 +10,7 @@ import { CheckEmailDirective } from './directives/check-email.directive';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorMessageControlComponent } from './components/error-message-control/error-message-control.component';
 import { InputControlComponent } from './components/input-control/input-control.component';
+import { ButtonSubmitComponent } from './components/button-submit/button-submit.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { InputControlComponent } from './components/input-control/input-control.
     CheckEmailDirective,
     ErrorMessageControlComponent,
     InputControlComponent,
+    ButtonSubmitComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
