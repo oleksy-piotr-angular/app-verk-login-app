@@ -8,15 +8,15 @@ import { ValidationErrors } from '@angular/forms';
 })
 export class ErrorMessageControlComponent implements OnChanges {
   @Input('errors') set setErrors(_errors: ValidationErrors | null) {
-    this.errors = _errors;
+    this.validationErrors = _errors;
   }
 
   public errorMessages: string[] = [];
-  private errors: ValidationErrors | null = null;
+  private validationErrors: ValidationErrors | null = null;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['setErrors'] && this.errors) {
-      this.errorMessages = this.getErrorMessages(this.errors);
+    if (changes['setErrors'] && this.validationErrors) {
+      this.errorMessages = this.getErrorMessages(this.validationErrors);
     }
   }
 
