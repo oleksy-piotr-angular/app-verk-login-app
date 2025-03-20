@@ -12,7 +12,10 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomePageComponent,
+    loadChildren: () =>
+      import('./pages/home-page/home-page.module').then(
+        (m) => m.HomePageModule
+      ), // lazy loading of home page module
     canActivate: [canOpenIfLoggedInGuard], //a guard has been set to allow only logged in users to visit this home page
   },
 ];
