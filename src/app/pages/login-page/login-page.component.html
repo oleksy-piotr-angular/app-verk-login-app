@@ -1,10 +1,11 @@
 <h2>Login:</h2>
 
-<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+<form #formRef="ngForm" (ngSubmit)="onSubmit()">
   <fieldset ngModelGroup="login">
     <app-input-control
       *ngFor="let control of inputControls"
       [input-control]="control"
+      (onValueChange)="onValueChange($event)"
     ></app-input-control>
   </fieldset>
 

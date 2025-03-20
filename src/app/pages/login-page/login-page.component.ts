@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { InputControlAttrData } from '../../data-structure-definitions/input-control-attr-data';
+import {
+  InputControlAttrData,
+  LabelsType,
+} from '../../data-structure-definitions/input-control-attr-data';
 
 @Component({
   selector: 'app-login-page',
@@ -9,8 +12,7 @@ import { InputControlAttrData } from '../../data-structure-definitions/input-con
   styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent implements OnInit {
-  public email: string = '';
-  public password: string = '';
+  public loginData = { email: '', password: '' };
   public inputControls: InputControlAttrData[] = [];
 
   public constructor(private auth: AuthService, private router: Router) {}
@@ -20,6 +22,7 @@ export class LoginPageComponent implements OnInit {
     if (this.auth.isAuthenticated()) {
       this.router.navigate(['/home']);
     }
+
     //initialize controls for login form
     this.inputControls = [
       {
@@ -39,12 +42,21 @@ export class LoginPageComponent implements OnInit {
     ];
   }
 
-  public onSubmit(formValue: {
-    login: { email: string; password: string };
-  }): void {
-    this.auth.login(formValue.login.email, formValue.login.password);
-    this.inputControls.forEach((control) => {
-      console.log('controls: ' + control.checkEmail + control.value);
-    });
+  //change "loginData" object when the input value changes
+  onValueChange(event: { label: LabelsType; value: string }): void {
+    //bellow we use the type assertion to make sure that the label is either 'email' or 'password'
+    const label: 'email' | 'password' = event.label;
+
+    //we use the label to access the loginData object property and set the value for this property
+    this.loginData[label] = event.value;
+  }
+
+  //handle the form submit event using data from loginData object
+  public onSubmit(): void {
+    this.auth.login(this.loginData.email, this.loginData.password);
+
+    //to show in the console that we are using data from the input form controls
+    console.log('loginData: ');
+    console.log(this.loginData);
   }
 }

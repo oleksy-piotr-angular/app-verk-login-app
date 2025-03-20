@@ -1,11 +1,8 @@
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  SimpleChanges,
-} from '@angular/core';
-import { InputControlAttrData } from '../../data-structure-definitions/input-control-attr-data';
+  InputControlAttrData,
+  LabelsType,
+} from '../../data-structure-definitions/input-control-attr-data';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
@@ -16,13 +13,16 @@ import { ControlContainer, NgForm } from '@angular/forms';
 })
 export class InputControlComponent {
   @Input('input-control') public controlAttrData!: InputControlAttrData;
-  @Output() public valueEmitter: EventEmitter<string> =
-    new EventEmitter<string>();
-  ngOnInit(): void {
-    console.log(this.controlAttrData);
-  }
+  @Output('onValueChange') public valueEmitter: EventEmitter<{
+    label: LabelsType;
+    value: string;
+  }> = new EventEmitter<{ label: LabelsType; value: string }>();
 
+  // call method when the input value changes and emits the new value with event-binding
   onChange(value: string | undefined): void {
-    console.log(value);
+    this.valueEmitter.emit({
+      label: this.controlAttrData.label,
+      value: value || '',
+    });
   }
 }
