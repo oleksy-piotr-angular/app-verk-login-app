@@ -2,46 +2,11 @@
 
 <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
   <fieldset ngModelGroup="login">
-    <input
-      #emailRef="ngModel"
-      name="email"
-      ngModel
-      type="text"
-      placeholder="email"
-      [(ngModel)]="email"
-      required
-      appIsEmailInvalid
-    />
-
-    <div class="error-message-controller">
-      <app-error-message-control
-        *ngIf="emailRef.touched && emailRef.invalid"
-        [errors]="emailRef.errors"
-      ></app-error-message-control>
-    </div>
-
-    <input
-      #passwordRef="ngModel"
-      name="password"
-      type="password"
-      placeholder="password"
-      [(ngModel)]="password"
-      required
-    />
-
-    <div class="error-message-controller">
-      <app-error-message-control
-        *ngIf="passwordRef.touched && passwordRef.invalid"
-        [errors]="passwordRef.errors"
-      ></app-error-message-control>
-    </div>
+    <app-input-control
+      *ngFor="let control of inputControls"
+      [input-control]="control"
+    ></app-input-control>
   </fieldset>
 
-  <button
-    [disabled]="passwordRef.invalid || emailRef.invalid"
-    type="submit"
-    class="btn btn-primary"
-  >
-    Log in
-  </button>
+  <app-button-submit></app-button-submit>
 </form>
