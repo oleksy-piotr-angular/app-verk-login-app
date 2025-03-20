@@ -4,4 +4,5 @@ export interface InputControlAttrData {
   placeholder: string;
   isRequired: boolean;
   checkEmail: boolean;
+  value?: string;
 }
