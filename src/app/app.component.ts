@@ -6,9 +6,6 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  public constructor(private router: Router) {}
-  ngOnInit(): void {
-    this.router.navigate(['/login']); //redirect to login page after app starts
-  }
+export class AppComponent {
+  title = '#AppVerkLoginApp';
 }
