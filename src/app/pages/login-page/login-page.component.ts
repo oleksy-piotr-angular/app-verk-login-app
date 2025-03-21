@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
     //redirect to the home page if user is still Authenticated
     if (this.auth.isAuthenticated()) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/homepage']);
     }
 
     //initialize controls for login form

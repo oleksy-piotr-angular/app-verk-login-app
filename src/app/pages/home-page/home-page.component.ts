@@ -3,6 +3,7 @@ import { HttpService } from '../../services/http.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserData } from '../../data-structure-definitions/user-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +17,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
   public userEmailSub: Subscription | null = null;
   public constructor(
     private authService: AuthService,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

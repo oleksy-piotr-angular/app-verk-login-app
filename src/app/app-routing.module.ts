@@ -4,6 +4,11 @@ import { canOpenIfLoggedInGuard } from './guards/can-open-if-logged-in.guard';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: '/homepage', //redirect to homepage if the path is empty
+    pathMatch: 'full',
+  },
+  {
     path: 'homepage',
     loadChildren: () =>
       import('./pages/home-page/home-page.module').then(

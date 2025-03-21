@@ -20,7 +20,7 @@ export class AuthService {
     //normally here should be a request sent to the server to get the JWT and perform other actions
     localStorage.setItem('userToken', this.userToken);
     localStorage.setItem('userEmail', email);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/homepage']);
   }
 
   //remove userToken and userEmail from localStorage and navigate to login page
