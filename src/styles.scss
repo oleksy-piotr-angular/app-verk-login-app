@@ -1,1 +1,23 @@
+@charset "UTF-8";
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: Roboto;
+  src: url(/assets/fonts/roboto/Roboto-VariableFont_wdth_wght.ttf)
+      format("truetype-variations"),
+    url(/assets/fonts/roboto/Roboto-VariableFont_wdth_wght.ttf)
+      format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+// Import all downloaded fonts embedded in this font SCSS file
+@import "./assets/fonts/fonts.scss";
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

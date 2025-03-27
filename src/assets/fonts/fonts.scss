@@ -1,0 +1,10 @@
+// specifies a custom font with which to display text
+@font-face {
+  font-family: "Roboto";
+  src: url("/assets/fonts/roboto/Roboto-VariableFont_wdth_wght.ttf")
+      format("truetype-variations"),
+    url("/assets/fonts/roboto/Roboto-VariableFont_wdth_wght.ttf")
+      format("truetype"); /* Dodatkowe formaty dla kompatybilności */
+  font-weight: normal; /* lub odpowiedni zakres dla czcionki zmiennej */
+  font-style: normal;
+}
