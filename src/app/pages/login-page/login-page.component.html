@@ -1,13 +1,16 @@
-<h2>Login:</h2>
+<div class="child-container">
+  <h2>Login:</h2>
+  <div class="login-table">
+    <form #formRef="ngForm" (ngSubmit)="onSubmit()">
+      <fieldset ngModelGroup="login">
+        <app-input-control
+          *ngFor="let control of inputControls"
+          [input-control]="control"
+          (onValueChange)="onValueChange($event)"
+        ></app-input-control>
+      </fieldset>
 
-<form #formRef="ngForm" (ngSubmit)="onSubmit()">
-  <fieldset ngModelGroup="login">
-    <app-input-control
-      *ngFor="let control of inputControls"
-      [input-control]="control"
-      (onValueChange)="onValueChange($event)"
-    ></app-input-control>
-  </fieldset>
-
-  <app-button-submit></app-button-submit>
-</form>
+      <app-button-submit></app-button-submit>
+    </form>
+  </div>
+</div>

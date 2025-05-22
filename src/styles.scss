@@ -11,6 +11,10 @@
   font-style: normal;
 }
 
+@import "./assets/styles/utilities.scss";
+@import "./assets/styles/containers.scss";
+@import "./assets/styles/header-settings.scss";
+
 // Import all downloaded fonts embedded in this font SCSS file
 @import "./assets/fonts/fonts.scss";
 

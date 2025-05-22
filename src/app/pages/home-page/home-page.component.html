@@ -1,98 +1,85 @@
-<h2 id="homepage">User Data - homepage:</h2>
+<div class="child-container">
+  <h2>Homepage - User Data:</h2>
+  <div class="homepage-table">
+    <dl class="default-font-size">
+      <dt>id</dt>
+      <dd>{{ userData?.id }}</dd>
 
-<dl class="row">
-  <dt class="col-sm-3">id:</dt>
-  <dd class="col-sm-9">{{ userData?.id }}</dd>
-  <hr />
+      <dt>user email</dt>
+      <dd>{{ userEmail }}</dd>
 
-  <dt class="col-sm-3">user email:</dt>
-  <dd class="col-sm-9">{{ userEmail }}</dd>
+      <dt>name</dt>
+      <dd>{{ userData?.name }}</dd>
 
-  <dt class="col-sm-3">name:</dt>
-  <dd class="col-sm-9">{{ userData?.name }}</dd>
+      <dt>username</dt>
+      <dd>{{ userData?.username }}</dd>
 
-  <dt class="col-sm-3">username:</dt>
-  <dd class="col-sm-9">{{ userData?.username }}</dd>
-  <hr />
-
-  <dt class="col-sm-3">address:</dt>
-  <dd class="col-sm-4">
-    <dl class="row">
-      <dt class="col-sm-4">street:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.address?.street }}
-      </dd>
-    </dl>
-
-    <dl class="row">
-      <dt class="col-sm-4">suite:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.address?.suite }}
-      </dd>
-    </dl>
-
-    <dl class="row">
-      <dt class="col-sm-4">city:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.address?.city }}
-      </dd>
-    </dl>
-
-    <dl class="row">
-      <dt class="col-sm-4">zipcode:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.address?.zipcode }}
-      </dd>
-    </dl>
-    <hr />
-
-    <dl class="row">
-      <dt class="col-sm-4">geo:</dt>
-      <dd class="col-sm-8">
+      <dt>address</dt>
+      <dd>
         <dl>
-          <dt class="col-sm-4">lat:</dt>
-          <dd class="col-sm-8">
-            {{ userData?.address?.geo?.lat }}
+          <dt>street</dt>
+          <dd>
+            {{ userData?.address?.street }}
+          </dd>
+          <dt>suite</dt>
+          <dd>
+            {{ userData?.address?.suite }}
+          </dd>
+          <dt>city</dt>
+          <dd>
+            {{ userData?.address?.city }}
+          </dd>
+          <dt>zipcode</dt>
+          <dd>
+            {{ userData?.address?.zipcode }}
           </dd>
 
-          <dt class="col-sm-4">lng:</dt>
-          <dd class="col-sm-8">
-            {{ userData?.address?.geo?.lng }}
+          <dt>geo</dt>
+          <dd>
+            <dl>
+              <dt>lat</dt>
+              <dd>
+                {{ userData?.address?.geo?.lat }}
+              </dd>
+
+              <dt>lng</dt>
+              <dd>
+                {{ userData?.address?.geo?.lng }}
+              </dd>
+            </dl>
+          </dd>
+        </dl>
+      </dd>
+
+      <dt>phone</dt>
+      <dd>{{ userData?.phone }}</dd>
+
+      <dt>website</dt>
+      <dd>{{ userData?.website }}</dd>
+
+      <dt>company</dt>
+      <dd>
+        <dl>
+          <dt>name</dt>
+          <dd>
+            {{ userData?.company?.name }}
+          </dd>
+
+          <dt>catchPhrase</dt>
+          <dd>
+            {{ userData?.company?.catchPhrase }}
+          </dd>
+
+          <dt>bs</dt>
+          <dd>
+            {{ userData?.company?.bs }}
           </dd>
         </dl>
       </dd>
     </dl>
-  </dd>
-  <hr />
 
-  <dt class="col-sm-3">phone:</dt>
-  <dd class="col-sm-9">{{ userData?.phone }}</dd>
-
-  <dt class="col-sm-3">website:</dt>
-  <dd class="col-sm-9">{{ userData?.website }}</dd>
-  <hr />
-
-  <dt class="col-sm-3">company:</dt>
-  <dd class="col-sm-8">
-    <dl>
-      <dt class="col-sm-4">name:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.company?.name }}
-      </dd>
-
-      <dt class="col-sm-4">catchPhrase:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.company?.catchPhrase }}
-      </dd>
-
-      <dt class="col-sm-4">bs:</dt>
-      <dd class="col-sm-8">
-        {{ userData?.company?.bs }}
-      </dd>
-    </dl>
-  </dd>
-</dl>
-
-<button type="button" class="btn btn-warning mb-4" (click)="onLogout()">
-  Log out
-</button>
+    <button type="button" class="button btn-logout-color" (click)="onLogout()">
+      Log out
+    </button>
+  </div>
+</div>

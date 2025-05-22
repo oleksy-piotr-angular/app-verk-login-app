@@ -2,3 +2,18 @@
   height: 15px;
   margin-bottom: 10px;
 }
+fieldset {
+  display: block;
+  min-inline-size: min-content;
+  margin-inline: 2px;
+  padding-block: 0.35em 0.625em;
+  padding-inline: 0.75em;
+  border: none;
+}
+
+.login-table {
+  background: #8b89ff;
+  padding: 10px;
+  border: #0400ff 5px solid;
+  border-radius: 30px;
+}

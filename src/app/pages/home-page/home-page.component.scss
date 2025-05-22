@@ -1,0 +1,28 @@
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  border: 3px double #ffae00;
+  border-right: none;
+  border-left: none;
+  padding: 0.5em;
+}
+
+dt {
+  font-weight: bold;
+  text-decoration: underline;
+}
+dt::after {
+  content: ":";
+}
+
+dd {
+  margin: 0 0 0 6vw;
+  padding: 0 0 0.5em 0;
+}
+
+.homepage-table {
+  background: #6dff75;
+  padding: 10px;
+  border: #00af09 5px solid;
+  border-radius: 30px;
+}

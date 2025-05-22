@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  max-width: 750px;
+  min-height: 300px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.child-container {
+  width: 100%;
+  max-width: 700px;
+  min-height: 300px;
+  // background: #8b89ff;
+  // padding: 10px;
+  // border: #0400ff 5px solid;
+  // border-radius: 30px;
+}
