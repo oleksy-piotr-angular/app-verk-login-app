@@ -3,20 +3,22 @@ import { CommonModule } from '@angular/common';
 
 import { LoginPageRoutingModule } from './login-page-routing.module';
 import { LoginPageComponent } from './login-page.component';
-import { CheckEmailDirective } from '../../directives/check-email.directive';
 import { ErrorMessageControlComponent } from '../../components/error-message-control/error-message-control.component';
-import { InputControlComponent } from '../../components/input-control/input-control.component';
-import { ButtonSubmitComponent } from '../../components/button-submit/button-submit.component';
-import { FormsModule } from '@angular/forms';
+import { ButtonSubmitComponent } from '../../components/form-elements/button-submit/button-submit.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputModule } from '../../components/form-elements/input/input.module';
 
 @NgModule({
   declarations: [
     LoginPageComponent,
-    CheckEmailDirective,
     ErrorMessageControlComponent,
-    InputControlComponent,
     ButtonSubmitComponent,
   ],
-  imports: [CommonModule, LoginPageRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    LoginPageRoutingModule,
+    InputModule,
+    ReactiveFormsModule,
+  ],
 })
 export class LoginPageModule {}
