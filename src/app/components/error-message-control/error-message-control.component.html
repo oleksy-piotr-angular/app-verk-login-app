@@ -1,5 +1,8 @@
-<div class="error-colors xx-small-text">
-  <span *ngFor="let error of errorMessages">
-    {{ error }}
-  </span>
+<div
+  *ngIf="control && control.touched && control.invalid"
+  class="error-messages"
+>
+  <div *ngFor="let message of errorMessages" class="error-message">
+    {{ message }}
+  </div>
 </div>
