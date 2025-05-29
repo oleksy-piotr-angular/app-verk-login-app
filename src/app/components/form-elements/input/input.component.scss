@@ -1,5 +1,6 @@
 .form-group {
   margin-bottom: 1rem;
+  position: relative; /* Position relative to allow absolute positioning of error messages */
 }
 
 input.form-control {

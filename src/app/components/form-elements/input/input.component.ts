@@ -1,5 +1,9 @@
 import { Component, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-input',
@@ -17,6 +21,7 @@ export class InputComponent implements ControlValueAccessor {
   @Input() public label!: string; // Field label
   @Input() public type: string = 'text'; // Input type (e.g. text, password)
   @Input() public placeholder: string = ''; // Placeholder for input
+  @Input() public control?: AbstractControl; // Form control for validation
 
   public value: string = ''; // Field value
   public isDisabled: boolean = false; // Is the field disabled
