@@ -9,11 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { InputModule } from '../../components/form-elements/input/input.module';
 
 @NgModule({
-  declarations: [
-    LoginPageComponent,
-    ErrorMessageControlComponent,
-    ButtonSubmitComponent,
-  ],
+  declarations: [LoginPageComponent, ButtonSubmitComponent],
   imports: [
     CommonModule,
     LoginPageRoutingModule,

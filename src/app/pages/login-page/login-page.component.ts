@@ -7,6 +7,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import {
+  emailFormatValidator,
+  passwordStrengthValidator,
+} from '../../shared/validators/validators';
 
 @Component({
   selector: 'app-login-page',
@@ -41,14 +45,13 @@ export class LoginPageComponent implements OnInit {
     );
   }
 
-  //!!TODO add Custom Validators for email and password fields
   // Define validators dynamically based on control name
   private getValidators(control: string) {
     switch (control) {
       case 'email':
-        return [Validators.required, Validators.email];
+        return [Validators.required, emailFormatValidator()];
       case 'password':
-        return [Validators.required, Validators.minLength(6)];
+        return [Validators.required, passwordStrengthValidator()];
       default:
         return [Validators.required];
     }

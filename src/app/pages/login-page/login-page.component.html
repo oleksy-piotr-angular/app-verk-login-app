@@ -9,6 +9,7 @@
             [type]="control === 'password' ? 'password' : 'text'"
             [placeholder]="'Enter ' + control"
             formControlName="{{ control }}"
+            [control]="loginForm.get(control) ?? undefined"
           ></app-input>
         </ng-container>
       </fieldset>
