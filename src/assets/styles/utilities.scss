@@ -19,16 +19,28 @@
   font-weight: bold;
   border-radius: 5%;
   border: #797979 3px solid;
-}
-.button:active {
-  transform: scale(0.95);
-}
 
-.btn-submit-color {
-  background-color: #008cba;
-}
+  &.btn-submit-color {
+    background-color: #008cba;
+  }
 
-.btn-logout-color {
-  background-color: #c0c0c0;
-  color: #000;
+  &.btn-logout-color {
+    background-color: #c0c0c0;
+    color: #000;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:hover {
+    background-color: #005f73;
+    color: white;
+  }
+
+  &:disabled {
+    background-color: #c0c0c0;
+    color: #000;
+    cursor: not-allowed;
+  }
 }
