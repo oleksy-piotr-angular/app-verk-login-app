@@ -7,7 +7,7 @@ import {
 } from '../models/user-data.model';
 
 export class UserDataMapper {
-  static fromDTO(dto: UserDataDTO): UserDataModel {
+  public static fromDTO(dto: UserDataDTO): UserDataModel {
     const geo = new Geo(dto.address.geo.lat, dto.address.geo.lng);
 
     const address = new Address(

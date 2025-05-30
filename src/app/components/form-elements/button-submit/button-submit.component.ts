@@ -7,6 +7,6 @@ import { ControlContainer, FormGroup } from '@angular/forms';
   styleUrl: './button-submit.component.scss',
 })
 export class ButtonSubmitComponent {
-  @Input() formGroup!: FormGroup; // Reactive FormGroup input
+  @Input() public formGroup!: FormGroup; // Reactive FormGroup input
   constructor() {}
 }

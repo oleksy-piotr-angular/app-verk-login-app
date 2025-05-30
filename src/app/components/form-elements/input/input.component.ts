@@ -31,7 +31,7 @@ export class InputComponent implements ControlValueAccessor {
   public onTouched: () => void = () => {};
 
   //Writes a new value to the element.
-  writeValue(value: string): void {
+  public writeValue(value: string): void {
     this.value = value || '';
   }
 
@@ -43,22 +43,22 @@ export class InputComponent implements ControlValueAccessor {
   }
 
   //Registers a callback fn which is called when value changes in the UI control.
-  registerOnChange(fn: (value: string) => void): void {
+  public registerOnChange(fn: (value: string) => void): void {
     this.changed = fn;
   }
 
   // Registers a callback function that is called when the control receives a touch event.
-  registerOnTouched(fn: () => void): void {
+  public registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
   // Sets the disabled state of the control
-  setDisabledState(isDisabled: boolean): void {
+  public setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
   }
 
   // Called when input value changes
-  onInputChange(value: string): void {
+  public onInputChange(value: string): void {
     this.value = value;
     this.changed(value);
   }
