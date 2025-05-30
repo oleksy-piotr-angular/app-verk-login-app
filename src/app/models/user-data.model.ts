@@ -1,17 +1,5 @@
 // Definition of the structure of the user data
-export class UserDataModel {
-  public constructor(
-    public id: number,
-    public name: string,
-    public username: string,
-    public address: Address,
-    public phone: string,
-    public website: string,
-    public company: Company
-  ) {}
-}
-
-class Address {
+export class Address {
   constructor(
     public street: string,
     public suite: string,
@@ -21,14 +9,25 @@ class Address {
   ) {}
 }
 
-class Geo {
-  constructor(public lat: string, public lng: string) {}
-}
-
-class Company {
+export class Company {
   constructor(
     public name: string,
     public catchPhrase: string,
     public bs: string
+  ) {}
+}
+export class Geo {
+  constructor(public lat: string, public lng: string) {}
+}
+
+export class UserDataModel {
+  constructor(
+    public id: number,
+    public name: string,
+    public username: string,
+    public address: Address,
+    public phone: string,
+    public website: string,
+    public company: Company
   ) {}
 }
