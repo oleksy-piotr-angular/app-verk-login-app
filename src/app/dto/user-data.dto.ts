@@ -1,3 +1,4 @@
+// Definition of the structure of the user data received from the API
 export class UserDataDTO {
   constructor(
     public id: number,

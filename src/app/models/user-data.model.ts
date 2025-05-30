@@ -1,4 +1,4 @@
-// Definition of the structure of the user data
+// Definition of the structure of the user data model
 export class Address {
   constructor(
     public street: string,
