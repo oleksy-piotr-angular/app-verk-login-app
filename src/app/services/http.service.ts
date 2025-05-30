@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { UserDataModel } from '../models/user-data.model';
+import { UserDataDTO } from '../dto/user-data.dto';
+import { UserDataMapper } from '../mappers/user-data.mapper';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +15,8 @@ export class HttpService {
 
   //return Observable with Get UserData request with API response simulation
   public getUserData(): Observable<UserDataModel> {
-    return this.http.get<UserDataModel>(this.URL);
+    return this.http
+      .get<UserDataDTO>(this.URL)
+      .pipe(map((responseDto) => UserDataMapper.fromDTO(responseDto)));
   }
 }
