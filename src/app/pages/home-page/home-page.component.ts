@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { HttpService } from '../../services/http.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UserData } from '../../data-structure-definitions/user-data';
+import { UserData } from '../../models/user-data';
 import { Router } from '@angular/router';
 
 @Component({
