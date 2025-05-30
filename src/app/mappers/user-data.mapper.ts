@@ -1,29 +1,37 @@
 import { UserDataDTO } from '../dto/user-data.dto';
-import { UserDataModel } from '../models/user-data.model';
+import {
+  Address,
+  Company,
+  Geo,
+  UserDataModel,
+} from '../models/user-data.model';
 
 export class UserDataMapper {
   static fromDTO(dto: UserDataDTO): UserDataModel {
+    const geo = new Geo(dto.address.geo.lat, dto.address.geo.lng);
+
+    const address = new Address(
+      dto.address.street,
+      dto.address.suite,
+      dto.address.city,
+      dto.address.zipcode,
+      geo
+    );
+
+    const company = new Company(
+      dto.company.name,
+      dto.company.catchPhrase,
+      dto.company.bs
+    );
+
     return new UserDataModel(
       dto.id,
       dto.name,
       dto.username,
-      {
-        street: dto.address.street,
-        suite: dto.address.suite,
-        city: dto.address.city,
-        zipcode: dto.address.zipcode,
-        geo: {
-          lat: dto.address.geo.lat,
-          lng: dto.address.geo.lng,
-        },
-      },
+      address,
       dto.phone,
       dto.website,
-      {
-        name: dto.company.name,
-        catchPhrase: dto.company.catchPhrase,
-        bs: dto.company.bs,
-      }
+      company
     );
   }
 }
