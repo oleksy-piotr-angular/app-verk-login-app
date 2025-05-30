@@ -1,21 +1,21 @@
 <h1>AppVerkLoginApp</h1>
 
-<h2>Lista spełnionych wymagań:</h1>
+<h2>List of fulfilled requirements:</h2>
 <ul>
   <li>
-    Użyto SCSS do opisywania styli
+    SCSS was used for styling
   </li>
   <li>
-    Utrzymanie spójności typowania zmiennych
+    Consistency in variable typing was maintained
   </li>
   <li>
-    Utrzymanie spójności modyfikatorów dostępu
+    Consistency in access modifiers was maintained
   </li>
   <li>
-    Na potrzeby blokowania dostępu niezalogowanego użytkownika utworzono Guarda.
+    A Guard was created to block access for unauthorized users.
   </li>
-   <li>
-    Zastosowano czytelny podział zorganizowania projektu i podzielono na katalogi:
+  <li>
+    A clear project organization structure was applied and divided into directories:
     <ul>
     <li>
       components
@@ -44,59 +44,52 @@
     </ul>
   </li>
   <li>
-      implementacja lazy-loading w poprawnej nawigacji
+      Lazy-loading was implemented in proper navigation
   </li>
   <li>
-      Wykorzystano modele i DTO oraz dodano statyczną metodę do mapowania danych otrzymywanych w odpowiedziach z API
+      Models and DTOs were utilized, and a static method was added for mapping data received in API responses
   </li>
   <li>
-      Utworzono komponent kontrolki pola tekstowego z wykorzystaniem interfejsu ControlValueAccessor 
+      A text field control component was created using the ControlValueAccessor interface
   </li>
   <li>
-    Stworzenie strony logowania wraz z formularzem zawierającym pola: e-mail,
-    hasło.
+    A login page was created along with a form containing fields: email, password.
   </li>
   <li>
-    Walidacja jest realizowana przez Customowy Validator dołączany podczas dynamicznego procesu budowania formularza
+    Validation is implemented through a custom validator added during the dynamic form-building process
   </li>
   <li>
-    W przypadku błędu wyświetlany jest komponent error-message-control pod odpowiednim inputem, którego dotyczy błąd, do którego przekazywany jest AbstractControl formularza i w którym rozpatrywane są odpowiednie błędy przewidziane podczas Walidacji Formularza
+    In case of an error, an error-message-control component is displayed under the relevant input field. This component receives the form's AbstractControl and handles the appropriate errors anticipated during form validation.
   </li>
   <li>
-    Występuje autorska implementacja styli dla komponentów: wykorzystano responsywne kontenery i właściwości "display: flex"
+    Custom styling for components was implemented: responsive containers and "display: flex" properties were used.
   </li>
   <li>
-    Pliki czcionek zostały umieszczone lokalnie w projekcie:czcionka została zmieniona. Czcionka "Roboto" została pobrana z Google Fonts. Reguła "font-face" został zdefiniowany jako "Roboto". Właściwość "font-family" dla Root'a(html, body) została zdefiniowana jako "Roboto".
+    Font files were placed locally in the project: the font was changed. The "Roboto" font was downloaded from Google Fonts. The "font-face" rule was defined as "Roboto". The "font-family" property for the root (html, body) was set to "Roboto".
   </li>
   <li>
-   Commity są czytelne i napisane w języku angielskim - tak
-  </li>
-  <li>Dodanie walidacji formularza (wszystkie pola są wymagane).</li>
-  <li>
-    Zaimplementowanie autorskiego walidatora sprawdzającego pattern adresu e-mail (nie
-    użyto natywnego walidatora).
+    Commits are clear and written in English - yes
   </li>
   <li>
-    Dla pól formularza przygotowano autorski komponent kontrolki tekstowej, który w
-    przypadku niepoprawnego wypełnienia formularza, wyświetli komunikaty o
-    błędzie pod odpowiednią kontrolką.
+    Added form validation (all fields are required).
   </li>
   <li>
-    Po udanym zatwierdzeniu formularza, zasymulowano udane logowanie
-    użytkownika zapisując w local storage token użytkownika (na potrzeby
-    zadania wygenerowano randomowy JWT) a następnie przekierowano
-    użytkownika na stronę główną.
+    Implemented a custom validator to check the email address pattern (did not use the native validator).
   </li>
   <li>
-    Zabezpieczono stronę logowania oraz stronę główną aby:
+    For form fields, a custom text control component was prepared, which displays error messages under the relevant control in case of incorrect form completion.
+  </li>
+  <li>
+    After successfully submitting the form, a successful user login was simulated by saving a random JWT token in local storage (generated for the task) and then redirecting the user to the main page.
+  </li>
+  <li>
+    The login page and the main page were secured so that:
     <ul>
-      <li>użytkownik zalogowany nie miał dostępu do strony logowania</li>
-      <li>użytkownik niezalogowany nie miał dostępu do strony głównej</li>
+      <li>logged-in users cannot access the login page</li>
+      <li>unauthorized users cannot access the main page</li>
     </ul>
   </li>
   <li>
-    Po udanym logowaniu i przejściu do strony głównej pobiera się z API i wyświetla
-    dane zalogowanego użytkownika (Tutejszym API jest plik JSON umieszczony w
-    katalogu assets).
+    After successful login and navigation to the main page, data about the logged-in user is fetched from the API and displayed (the API here is a JSON file placed in the assets directory).
   </li>
 </ul>
