@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs';
 import { HttpService } from '../../services/http.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UserData } from '../../models/user-data';
+import { UserDataModel } from '../../models/user-data.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-  public userData: UserData | null = null;
+  public userData: UserDataModel | null = null;
   public userEmail: string | null = null;
   public getUserDataSub: Subscription | null = null;
   public userEmailSub: Subscription | null = null;

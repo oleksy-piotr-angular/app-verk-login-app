@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UserData } from '../models/user-data';
+import { UserDataModel } from '../models/user-data.model';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class HttpService {
   public constructor(private http: HttpClient) {}
 
   //return Observable with Get UserData request with API response simulation
-  public getUserData(): Observable<UserData> {
-    return this.http.get<UserData>(this.URL);
+  public getUserData(): Observable<UserDataModel> {
+    return this.http.get<UserDataModel>(this.URL);
   }
 }
